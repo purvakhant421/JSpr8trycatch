@@ -1,0 +1,257 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container">
+    <div class="row pt-5 pb-5">
+        <div class="col-md-1">
+            <button onclick="viewAllRecord()" class="btn btn-primary">All</button>
+        </div>
+        <div class="col-md-1">
+            <button onclick="phoneData()" class="btn btn-primary">Phone</button>
+        </div>
+        <div class="col-md-1">
+            <button onclick="menfashionData()" class="btn btn-primary">menfashion</button>
+        </div>
+        <div class="col-md-1">
+            <button onclick="womenfashionData()" class="btn btn-primary">Womenfashion</button>
+        </div>
+        <div class="col-md-1">
+            <button onclick="furnitureData()" class="btn btn-primary">Furniture</button>
+        </div>
+    </div>
+
+    <div class="row" id="allrecord">
+        
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+
+let data = [
+        {
+            name : "apple",
+            price : 149900,
+            image : "https://m.media-amazon.com/images/I/31DaY6l18YL._SY445_SX342_QL70_FMwebp_.jpg",
+            category : "phone"
+        },
+        {
+            name : "oneplus 11",
+            price : 56999,
+            image : "https://m.media-amazon.com/images/I/61amb0CfMGL._SX679_.jpg",
+            category : "phone"
+        },
+        {
+            name : "shirt",
+            price : 939,
+            image : "https://m.media-amazon.com/images/I/51+TeT++6dL._UL1500_.jpg",
+            category : "menfashion"
+        },
+        {
+            name : "Crew Neck Sweatshirt",
+            price : 759,
+            image : "https://m.media-amazon.com/images/I/51ed8MACkEL._UL1500_.jpg",
+            category : "menfashion"
+        },
+        {
+            name : "Top",
+            price : 300,
+            image : "https://m.media-amazon.com/images/I/81hNzHiZY0L._UL1500_.jpg",
+            category : "womenfashion"
+        },
+
+        {
+            name : "Living Room Table",
+            price : 3230,
+            image : "https://m.media-amazon.com/images/I/41aQfn8JxmL._SY300_SX300_QL70_FMwebp_.jpg",
+            category : "furniture"
+        },
+        {
+            name : "Woven Decor Nursery",
+            price : 285,
+            image : "https://m.media-amazon.com/images/I/51H2pAkicTL._SY879_.jpg",
+            category : "furniture"
+        },
+        {
+            name : "realme narzo",
+            price : 11499,
+            image : "https://m.media-amazon.com/images/I/81Ke5qtC6oL._SX679_.jpg",
+            category : "phone"
+        },
+        {
+            name : "samsung galaxy",
+            price : 24999,
+            image : "https://m.media-amazon.com/images/I/81EtFZ6GA1L._SX679_.jpg",
+            category : "phone"
+        },
+        {
+            name : "Polyester Blend Contemporary Fit Suit",
+            price : 6073,
+            image : "https://m.media-amazon.com/images/I/61rPCrRK1SL._UL1500_.jpg",
+            category : "menfashion"
+        },
+        {
+            name : "Silk Blend Sherwani Set",
+            price : 3599,
+            image : "https://m.media-amazon.com/images/I/41+m6xITMEL.jpg",
+            category : "menfashion"
+        },
+        {
+            name : "Women Jeans",
+            price : 1799,
+            image : "https://m.media-amazon.com/images/I/41revjRi8jL._UL1000_.jpg",
+            category : "womenfashion"
+        },
+        {
+            name : "Sofa Set",
+            price : 19949,
+            image : "https://m.media-amazon.com/images/I/41bguNHwgML._SY300_SX300_QL70_FMwebp_.jpg",
+            category : "furniture"
+        },
+        {
+            name : "Storage Books",
+            price : 1696,
+            image : "https://m.media-amazon.com/images/I/61sR-zkjTOL._SX679_.jpg",
+            category : "furniture"
+        }, 
+        {
+            name : "Knee Length Dress",
+            price : 499,
+            image : "https://m.media-amazon.com/images/I/61ocLMlkRRL._UL1440_.jpg",
+            category : "womenfashion"
+        },
+        {
+            name : "Kurta Pant & Dupatta Set",
+            price : 1699,
+            image : "https://m.media-amazon.com/images/I/819ASOeEorL._UL1500_.jpg",
+            category : "womenfashion"
+        },       
+    ];
+
+
+    viewAllRecord();
+    function viewAllRecord()
+    {
+        let tbl = "";
+        data.map((val)=>{
+            tbl += `
+                <div class="col-md-4 pb-4">
+                    <div class="card">
+                        <img src="${val.image}" style="height:400px;object-fit:cover" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">${val.name}</h5>
+                        <p class="card-text">${val.category}</p>
+                        <a href="#" class="btn btn-primary">Order</a>
+                        </div>
+                    </div>
+                </div>
+            `
+        })
+
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+    function phoneData(){
+        let category = "phone";
+        let tbl = "";
+        data.map((val)=>{
+
+            if(val.category == category)
+            {
+                tbl += `
+                    <div class="col-md-4 pb-4">
+                        <div class="card">
+                            <img src="${val.image}" style="height:400px;object-fit:cover" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${val.name}</h5>
+                            <p class="card-text">${val.category}</p>
+                            <a href="#" class="btn btn-primary">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+    function menfashionData(){
+        let category = "menfashion";
+        let tbl = "";
+        data.map((val)=>{
+
+            if(val.category == category)
+            {
+                tbl += `
+                    <div class="col-md-4 pb-4">
+                        <div class="card">
+                            <img src="${val.image}" style="height:400px;object-fit:cover" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${val.name}</h5>
+                            <p class="card-text">${val.category}</p>
+                            <a href="#" class="btn btn-primary">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+    function womenfashionData(){
+        let category = "womenfashion";
+        let tbl = "";
+        data.map((val)=>{
+
+            if(val.category == category)
+            {
+                tbl += `
+                    <div class="col-md-4 pb-4">
+                        <div class="card">
+                            <img src="${val.image}" style="height:400px;object-fit:cover" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${val.name}</h5>
+                            <p class="card-text">${val.category}</p>
+                            <a href="#" class="btn btn-primary">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+    function furnitureData(){
+        let category = "furniture";
+        let tbl = "";
+        data.map((val)=>{
+
+            if(val.category == category)
+            {
+                tbl += `
+                    <div class="col-md-4 pb-4">
+                        <div class="card">
+                            <img src="${val.image}" style="height:400px;object-fit:cover" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${val.name}</h5>
+                            <p class="card-text">${val.category}</p>
+                            <a href="#" class="btn btn-primary">Order</a>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        })
+        document.getElementById('allrecord').innerHTML = tbl;
+    }
+
+    
+
+
+</script>
